@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fatuma — Content Creator · Nairobi</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #F5EDD9;
+    --warm: #EDD9B8;
+    --terracotta: #C4622D;
+    --burnt: #8B3A1A;
+    --deep: #2C1810;
+    --gold: #B8860B;
+    --gold-light: #D4A017;
+    --sage: #6B8C6B;
+    --cream: #FAF6EF;
+    --white: #FFFFFF;
+    --text: #1E0F05;
+    --muted: #7A5C45;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 4rem;
+    background: rgba(250,246,239,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(184,134,11,0.2);
+  }
+  .nav-logo {
+    font-family: 'Amiri', serif;
+    font-size: 1.6rem; color: var(--burnt);
+    letter-spacing: 0.02em;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.88rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none; transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--terracotta); }
+  .nav-cta {
+    background: var(--terracotta); color: white;
+    padding: 0.6rem 1.5rem; border-radius: 2px;
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; transition: background 0.3s;
+  }
+  .nav-cta:hover { background: var(--burnt); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh; padding-top: 80px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    background: var(--sand);
+    position: relative; overflow: hidden;
+  }
+  .hero-bg-pattern {
+    position: absolute; inset: 0; opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C4622D' fill-opacity='1'%3E%3Cpath d='M30 0l30 52H0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 6rem 4rem 6rem 6rem; position: relative; z-index: 2;
+  }
+  .hero-eyebrow {
+    font-size: 0.8rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .hero-eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    line-height: 1.05; color: var(--deep);
+    margin-bottom: 1rem;
+  }
+  .hero-name em { color: var(--terracotta); font-style: italic; }
+  .hero-subtitle {
+    font-family: 'Amiri', serif; font-size: 1.4rem;
+    color: var(--muted); margin-bottom: 2rem; line-height: 1.6;
+  }
+  .hero-desc {
+    font-size: 1rem; line-height: 1.8; color: var(--muted);
+    max-width: 460px; margin-bottom: 3rem;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--terracotta); color: white;
+    padding: 0.9rem 2.2rem; text-decoration: none;
+    font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em;
+    transition: all 0.3s; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--burnt); transform: translateY(-2px); }
+  .btn-outline {
+    border: 1.5px solid var(--terracotta); color: var(--terracotta);
+    padding: 0.9rem 2.2rem; text-decoration: none;
+    font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em;
+    transition: all 0.3s; display: inline-block;
+  }
+  .btn-outline:hover { background: var(--terracotta); color: white; }
+  .hero-stats {
+    display: flex; gap: 2.5rem; margin-top: 3rem;
+    padding-top: 2rem; border-top: 1px solid rgba(196,98,45,0.2);
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--terracotta);
+  }
+  .stat-label { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.05em; }
+
+  .hero-right {
+    position: relative; display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .hero-img-frame {
+    position: relative; width: 420px; height: 520px;
+  }
+  .hero-portrait {
+    width: 100%; height: 100%; object-fit: cover;
+    border-radius: 4px;
+  }
+  .hero-img-accent {
+    position: absolute; bottom: -20px; right: -20px;
+    width: 200px; height: 200px;
+    border: 3px solid var(--gold);
+    border-radius: 4px; z-index: -1;
+  }
+  .hero-img-badge {
+    position: absolute; top: 30px; left: -30px;
+    background: var(--deep); color: var(--gold);
+    padding: 0.8rem 1.2rem; border-radius: 4px;
+    font-family: 'Amiri', serif; font-size: 1rem; line-height: 1.4;
+    text-align: center; max-width: 130px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  }
+  .hero-img-badge small { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.7rem; color: var(--warm); margin-top: 0.3rem; }
+
+  /* SVG Portrait Illustration */
+  .portrait-svg { width: 100%; height: 100%; }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 7rem 6rem; }
+  .section-tag {
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .section-tag::before { content: '✦'; font-size: 0.6rem; }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: var(--deep); line-height: 1.2; margin-bottom: 1.5rem;
+  }
+  .section-title em { color: var(--terracotta); font-style: italic; }
+
+  /* ── ABOUT ── */
+  #about {
+    background: var(--cream);
+    display: grid; grid-template-columns: 1fr 1.3fr; gap: 6rem; align-items: center;
+  }
+  .about-img-wrap { position: relative; }
+  .about-img-inner { position: relative; }
+  .about-collage {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  }
+  .collage-item {
+    border-radius: 6px; overflow: hidden; aspect-ratio: 1;
+    background: var(--warm);
+  }
+  .collage-item:first-child { grid-column: span 2; aspect-ratio: 16/9; }
+  .collage-svg { width: 100%; height: 100%; display: block; }
+  .about-quote {
+    background: var(--deep); color: var(--gold);
+    padding: 1.5rem; margin-top: 1rem;
+    font-family: 'Amiri', serif; font-size: 1.1rem; line-height: 1.6;
+    border-left: 4px solid var(--gold);
+  }
+  .about-text p {
+    font-size: 1.05rem; line-height: 1.9; color: var(--muted); margin-bottom: 1.2rem;
+  }
+  .about-values {
+    display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem;
+  }
+  .value-tag {
+    background: var(--warm); color: var(--burnt);
+    padding: 0.4rem 1rem; border-radius: 2px;
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.05em;
+  }
+
+  /* ── SERVICES ── */
+  #services { background: var(--deep); padding: 7rem 6rem; }
+  #services .section-tag { color: var(--gold-light); }
+  #services .section-title { color: var(--sand); }
+  .services-intro { font-size: 1.05rem; color: #9B7E6A; max-width: 500px; margin-bottom: 4rem; line-height: 1.8; }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px;
+    background: rgba(255,255,255,0.08);
+  }
+  .service-card {
+    background: var(--deep); padding: 2.5rem 2rem;
+    transition: background 0.4s;
+    cursor: default;
+    border: 1.5px solid rgba(184,134,11,0.1);
+  }
+  .service-card:hover { background: rgba(196,98,45,0.15); }
+  .service-icon {
+    width: 52px; height: 52px; background: rgba(184,134,11,0.15);
+    border-radius: 4px; display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.5rem; font-size: 1.5rem;
+  }
+  .service-name {
+    font-family: 'Playfair Display', serif; font-size: 1.25rem;
+    color: var(--sand); margin-bottom: 0.8rem;
+  }
+  .service-desc { font-size: 0.9rem; color: #9B7E6A; line-height: 1.7; margin-bottom: 1.2rem; }
+  .service-price {
+    font-size: 0.82rem; font-weight: 500; color: var(--gold);
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+
+  /* ── PORTFOLIO ── */
+  #portfolio { background: var(--sand); }
+  .portfolio-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
+  .portfolio-filters { display: flex; gap: 0.5rem; }
+  .filter-btn {
+    padding: 0.5rem 1.2rem; border: 1px solid rgba(196,98,45,0.3);
+    background: transparent; color: var(--muted); font-size: 0.82rem;
+    cursor: pointer; transition: all 0.3s; border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .filter-btn.active, .filter-btn:hover {
+    background: var(--terracotta); color: white; border-color: var(--terracotta);
+  }
+  .portfolio-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem;
+  }
+  .portfolio-item {
+    position: relative; overflow: hidden; border-radius: 4px;
+    aspect-ratio: 4/5; cursor: pointer; background: var(--warm);
+  }
+  .portfolio-item.wide { grid-column: span 2; aspect-ratio: 16/9; }
+  .portfolio-item svg { width: 100%; height: 100%; display: block; }
+  .portfolio-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(44,24,16,0.9) 0%, transparent 60%);
+    opacity: 0; transition: opacity 0.4s;
+    display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem;
+  }
+  .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+  .portfolio-overlay h3 {
+    font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--sand); margin-bottom: 0.3rem;
+  }
+  .portfolio-overlay p { font-size: 0.8rem; color: var(--warm); }
+
+  /* ── TESTIMONIALS ── */
+  #testimonials { background: var(--cream); }
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem;
+  }
+  .testimonial-card {
+    background: var(--white); padding: 2rem;
+    border: 1px solid rgba(196,98,45,0.1);
+    border-radius: 6px; position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(44,24,16,0.08); }
+  .t-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 2px; }
+  .t-quote {
+    font-size: 0.95rem; line-height: 1.8; color: var(--muted);
+    margin-bottom: 1.5rem; font-style: italic;
+  }
+  .t-quote::before { content: '"'; font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--terracotta); opacity: 0.3; line-height: 0; vertical-align: -1rem; margin-right: 4px; }
+  .t-author { display: flex; align-items: center; gap: 0.8rem; }
+  .t-avatar {
+    width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+  }
+  .t-avatar svg { width: 100%; height: 100%; }
+  .t-name { font-size: 0.9rem; font-weight: 500; color: var(--deep); }
+  .t-role { font-size: 0.75rem; color: var(--muted); }
+  .t-brand { font-size: 0.7rem; color: var(--terracotta); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* ── MORE / BLOG ── */
+  #more { background: var(--sand); padding: 7rem 6rem; }
+  .more-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .more-card {
+    background: var(--cream); border-radius: 6px; overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .more-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(44,24,16,0.1); }
+  .more-img { aspect-ratio: 16/9; overflow: hidden; }
+  .more-img svg { width: 100%; height: 100%; display: block; }
+  .more-body { padding: 1.5rem; }
+  .more-cat {
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 0.6rem;
+  }
+  .more-title {
+    font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--deep);
+    line-height: 1.4; margin-bottom: 0.6rem;
+  }
+  .more-excerpt { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+  .more-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(196,98,45,0.1); }
+  .more-date { font-size: 0.75rem; color: var(--muted); }
+  .more-read { font-size: 0.75rem; color: var(--terracotta); font-weight: 500; text-decoration: none; }
+
+  /* ── MAP / LOCATION ── */
+  #location { background: var(--deep); padding: 7rem 6rem; }
+  #location .section-tag { color: var(--gold-light); }
+  #location .section-title { color: var(--sand); margin-bottom: 0.8rem; }
+  #location .section-intro { color: #9B7E6A; font-size: 1rem; margin-bottom: 3rem; line-height: 1.7; }
+  .location-wrap {
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start;
+  }
+  .map-container {
+    border-radius: 8px; overflow: hidden;
+    border: 2px solid rgba(184,134,11,0.25);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+  .map-container iframe {
+    width: 100%; height: 420px; display: block; border: none; filter: grayscale(20%) sepia(10%);
+  }
+  .location-info { padding: 1rem 0; }
+  .loc-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1.2rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .loc-icon {
+    width: 40px; height: 40px; background: rgba(184,134,11,0.15);
+    border-radius: 4px; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 1.1rem;
+  }
+  .loc-label { font-size: 0.75rem; color: #9B7E6A; letter-spacing: 0.06em; text-transform: uppercase; }
+  .loc-val { font-size: 1rem; color: var(--sand); margin-top: 0.2rem; }
+  .availability-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(107,140,107,0.2); color: #90C090;
+    padding: 0.6rem 1.2rem; border-radius: 2px;
+    font-size: 0.82rem; font-weight: 500; margin-top: 1.5rem;
+  }
+  .dot { width: 8px; height: 8px; background: #90C090; border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--cream); padding: 7rem 6rem; }
+  .contact-wrap {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+  }
+  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-label { font-size: 0.8rem; font-weight: 500; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; }
+  .form-input, .form-select, .form-textarea {
+    padding: 0.9rem 1rem; border: 1px solid rgba(196,98,45,0.2);
+    background: white; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--text);
+    border-radius: 4px; transition: border-color 0.3s;
+    outline: none;
+  }
+  .form-input:focus, .form-textarea:focus { border-color: var(--terracotta); }
+  .form-textarea { min-height: 140px; resize: vertical; }
+  .form-submit {
+    background: var(--terracotta); color: white; border: none;
+    padding: 1rem 2.5rem; font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    cursor: pointer; transition: background 0.3s; border-radius: 2px; align-self: flex-start;
+  }
+  .form-submit:hover { background: var(--burnt); }
+  .contact-info h3 {
+    font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--deep); margin-bottom: 1rem;
+  }
+  .contact-info p { font-size: 1rem; color: var(--muted); line-height: 1.8; margin-bottom: 2rem; }
+  .social-links { display: flex; flex-direction: column; gap: 0.8rem; }
+  .social-link {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 0.9rem 1.2rem; background: var(--sand); border-radius: 4px;
+    text-decoration: none; color: var(--text); transition: all 0.3s;
+  }
+  .social-link:hover { background: var(--terracotta); color: white; }
+  .social-link:hover .social-handle { color: rgba(255,255,255,0.8); }
+  .social-icon { font-size: 1.2rem; }
+  .social-name { font-weight: 500; font-size: 0.9rem; }
+  .social-handle { font-size: 0.8rem; color: var(--muted); margin-left: auto; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--deep); padding: 3rem 6rem;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid rgba(184,134,11,0.2);
+  }
+  .footer-logo { font-family: 'Amiri', serif; font-size: 1.4rem; color: var(--sand); }
+  .footer-logo span { color: var(--gold); }
+  .footer-copy { font-size: 0.8rem; color: #9B7E6A; }
+  .footer-arabic { font-family: 'Amiri', serif; color: var(--gold); font-size: 1rem; }
+
+  /* ── DECORATIVE ELEMENTS ── */
+  .geometric-divider {
+    display: flex; align-items: center; gap: 1rem;
+    margin: 1rem 0 2rem;
+  }
+  .geo-line { flex: 1; height: 1px; background: rgba(196,98,45,0.2); }
+  .geo-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
+
+  /* scroll fade-in */
+  .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 2rem; }
+    .nav-links { display: none; }
+    section { padding: 5rem 2rem; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-right { display: none; }
+    #about { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr 1fr; }
+    .portfolio-item.wide { grid-column: span 2; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .more-grid { grid-template-columns: 1fr; }
+    .location-wrap { grid-template-columns: 1fr; }
+    .contact-wrap { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Fatuma<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#more">Blog</a></li>
+    <li><a href="#location">Location</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Work With Me</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-left fade-in">
+    <div class="hero-eyebrow">Nairobi, Kenya · Est. 2019</div>
+    <h1 class="hero-name">
+      Fatuma<br><em>Hassan</em>
+    </h1>
+    <p class="hero-subtitle">Content Creator · Storyteller · Brand Voice</p>
+    <p class="hero-desc">
+      Bringing authentic East African narratives to life through photography, video, and lifestyle content rooted in culture, faith, and modern Nairobi living.
+    </p>
+    <div class="hero-btns">
+      <a href="#portfolio" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-outline">Get In Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">85K+</div>
+        <div class="stat-label">Followers</div>
+      </div>
+      <div>
+        <div class="stat-num">120+</div>
+        <div class="stat-label">Brands Worked With</div>
+      </div>
+      <div>
+        <div class="stat-num">5 Yrs</div>
+        <div class="stat-label">Creating Content</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-frame">
+      <!-- Generated SVG Portrait of Fatuma -->
+      <svg class="portrait-svg" viewBox="0 0 420 520" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="portraitClip"><rect width="420" height="520" rx="4"/></clipPath>
+          <radialGradient id="skinGrad" cx="50%" cy="40%" r="60%">
+            <stop offset="0%" stop-color="#8B5E3C"/>
+            <stop offset="100%" stop-color="#5C3218"/>
+          </radialGradient>
+          <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#EDD9B8"/>
+            <stop offset="100%" stop-color="#C4A07A"/>
+          </linearGradient>
+          <linearGradient id="hijabGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1A3A2A"/>
+            <stop offset="100%" stop-color="#0D2418"/>
+          </linearGradient>
+          <linearGradient id="dresGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#C4622D"/>
+            <stop offset="100%" stop-color="#8B3A1A"/>
+          </linearGradient>
+        </defs>
+        <g clip-path="url(#portraitClip)">
+          <!-- Background -->
+          <rect width="420" height="520" fill="url(#bgGrad)"/>
+          <!-- Geometric pattern bg -->
+          <pattern id="bgPat" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M20 0 L40 20 L20 40 L0 20 Z" fill="none" stroke="#C4A07A" stroke-width="0.5" opacity="0.4"/>
+          </pattern>
+          <rect width="420" height="520" fill="url(#bgPat)"/>
+          <!-- Outfit / body -->
+          <ellipse cx="210" cy="680" rx="160" ry="200" fill="url(#dresGrad)"/>
+          <!-- Neck -->
+          <rect x="185" y="330" width="50" height="60" fill="url(#skinGrad)" rx="4"/>
+          <!-- Collar decoration -->
+          <path d="M170 370 Q210 400 250 370" fill="none" stroke="#B8860B" stroke-width="1.5"/>
+          <!-- Head -->
+          <ellipse cx="210" cy="230" rx="85" ry="95" fill="url(#skinGrad)"/>
+          <!-- Hijab -->
+          <path d="M125 220 Q125 110 210 105 Q295 110 295 220 Q295 280 275 310 Q250 340 210 350 Q170 340 145 310 Q125 280 125 220 Z" fill="url(#hijabGrad)"/>
+          <!-- Hijab drape -->
+          <path d="M125 220 Q105 260 110 320 Q130 380 165 410 Q185 420 185 400 Q170 380 160 340 Q148 300 145 270 Z" fill="#163020"/>
+          <path d="M295 220 Q315 260 310 320 Q290 380 255 410 Q235 420 235 400 Q250 380 260 340 Q272 300 275 270 Z" fill="#163020"/>
+          <!-- Face features -->
+          <!-- Eyes -->
+          <ellipse cx="180" cy="220" rx="14" ry="11" fill="#1A0A02"/>
+          <ellipse cx="240" cy="220" rx="14" ry="11" fill="#1A0A02"/>
+          <ellipse cx="183" cy="218" rx="5" ry="5" fill="white" opacity="0.3"/>
+          <ellipse cx="243" cy="218" rx="5" ry="5" fill="white" opacity="0.3"/>
+          <!-- Eyebrows -->
+          <path d="M163 205 Q180 199 197 204" stroke="#2C1810" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M223 204 Q240 199 257 205" stroke="#2C1810" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- Nose -->
+          <path d="M208 230 Q205 248 200 255 Q207 260 220 255 Q215 248 212 230" fill="#6B3D1A" opacity="0.5"/>
+          <!-- Lips -->
+          <path d="M190 272 Q210 282 230 272" stroke="#7A3020" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M190 272 Q200 266 210 267 Q220 266 230 272" fill="#A0402A"/>
+          <!-- Smile lines -->
+          <path d="M185 268 Q180 280 182 292" stroke="#6B3D1A" stroke-width="1.2" fill="none" opacity="0.4"/>
+          <path d="M235 268 Q240 280 238 292" stroke="#6B3D1A" stroke-width="1.2" fill="none" opacity="0.4"/>
+          <!-- Gold earring visible -->
+          <circle cx="130" cy="280" r="8" fill="#B8860B"/>
+          <circle cx="130" cy="290" r="5" fill="#D4A017"/>
+          <!-- Camera prop in hands -->
+          <rect x="148" y="430" width="124" height="80" rx="8" fill="#2C1810"/>
+          <rect x="160" y="440" width="100" height="60" rx="4" fill="#3D2515"/>
+          <circle cx="210" cy="470" r="22" fill="#1A0A02"/>
+          <circle cx="210" cy="470" r="16" fill="#252525"/>
+          <circle cx="210" cy="470" r="10" fill="#1A1A1A"/>
+          <circle cx="205" cy="465" r="3" fill="white" opacity="0.3"/>
+          <rect x="220" y="436" width="28" height="14" rx="3" fill="#1A0A02"/>
+          <!-- Necklace -->
+          <path d="M170 360 Q210 380 250 360" stroke="#B8860B" stroke-width="1.5" fill="none"/>
+          <circle cx="210" cy="382" r="4" fill="#D4A017"/>
+          <!-- Hijab pin decoration -->
+          <circle cx="210" cy="155" r="5" fill="#B8860B"/>
+          <circle cx="210" cy="155" r="2.5" fill="#D4A017"/>
+          <!-- Ground shadow -->
+          <ellipse cx="210" cy="515" rx="140" ry="10" fill="#8B6040" opacity="0.3"/>
+        </g>
+      </svg>
+      <div class="hero-img-accent"></div>
+      <div class="hero-img-badge">
+        ✦ Featured<br>Creator 2024
+        <small>East Africa<br>Lifestyle Awards</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="fade-in">
+  <div class="about-img-wrap">
+    <div class="about-collage">
+      <!-- Collage image 1: Nairobi skyline -->
+      <div class="collage-item">
+        <svg class="collage-svg" viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+          <rect width="600" height="340" fill="#87CEEB"/>
+          <rect width="600" height="200" y="140" fill="#C4A07A"/>
+          <!-- Sky gradient -->
+          <rect width="600" height="180" fill="#E8C4A0" opacity="0.4"/>
+          <!-- Buildings Nairobi -->
+          <rect x="0" y="100" width="80" height="240" fill="#3D2515"/>
+          <rect x="70" y="140" width="60" height="200" fill="#5C3A1E"/>
+          <rect x="120" y="80" width="100" height="260" fill="#2C1810"/>
+          <!-- KICC Nairobi iconic cylinder -->
+          <rect x="230" y="60" width="70" height="280" fill="#3D2515"/>
+          <ellipse cx="265" cy="60" rx="35" ry="15" fill="#5C3A1E"/>
+          <rect x="255" y="20" width="20" height="45" fill="#4A2D16"/>
+          <rect x="310" y="120" width="90" height="220" fill="#2C1810"/>
+          <rect x="390" y="90" width="70" height="250" fill="#3D2515"/>
+          <rect x="450" y="150" width="80" height="190" fill="#5C3A1E"/>
+          <rect x="520" y="110" width="80" height="230" fill="#2C1810"/>
+          <!-- Windows -->
+          <g fill="#B8860B" opacity="0.6">
+            <rect x="130" y="100" width="8" height="6" rx="1"/>
+            <rect x="150" y="100" width="8" height="6" rx="1"/>
+            <rect x="170" y="100" width="8" height="6" rx="1"/>
+            <rect x="130" y="120" width="8" height="6" rx="1"/>
+            <rect x="150" y="120" width="8" height="6" rx="1"/>
+            <rect x="240" y="80" width="8" height="6" rx="1"/>
+            <rect x="260" y="80" width="8" height="6" rx="1"/>
+          </g>
+          <!-- Sun -->
+          <circle cx="500" cy="60" r="35" fill="#E8C040" opacity="0.8"/>
+          <!-- Foreground trees -->
+          <circle cx="50" cy="260" r="40" fill="#2D5A1B" opacity="0.9"/>
+          <circle cx="90" cy="270" r="30" fill="#3A7A24"/>
+          <circle cx="550" cy="250" r="45" fill="#2D5A1B" opacity="0.9"/>
+          <!-- Road -->
+          <rect x="0" y="310" width="600" height="30" fill="#4A3A28"/>
+          <text x="300" y="328" text-anchor="middle" font-size="11" fill="#C4A07A" font-family="DM Sans">NAIROBI · KENYA</text>
+        </svg>
+      </div>
+      <!-- Collage image 2: Studio setup -->
+      <div class="collage-item">
+        <svg class="collage-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="200" fill="#1A0F07"/>
+          <!-- Ring light -->
+          <circle cx="100" cy="90" r="65" fill="none" stroke="#D4A017" stroke-width="8" opacity="0.8"/>
+          <circle cx="100" cy="90" r="55" fill="none" stroke="#F0C030" stroke-width="3" opacity="0.4"/>
+          <!-- Camera on tripod -->
+          <rect x="85" y="75" width="30" height="22" rx="3" fill="#2C1810"/>
+          <rect x="88" y="77" width="24" height="18" rx="2" fill="#3D2515"/>
+          <circle cx="100" cy="86" r="7" fill="#1A0A02"/>
+          <circle cx="100" cy="86" r="5" fill="#252525"/>
+          <!-- Tripod legs -->
+          <line x1="100" y1="97" x2="80" y2="140" stroke="#5C3A1E" stroke-width="2"/>
+          <line x1="100" y1="97" x2="100" y2="140" stroke="#5C3A1E" stroke-width="2"/>
+          <line x1="100" y1="97" x2="120" y2="140" stroke="#5C3A1E" stroke-width="2"/>
+          <!-- Light orbs -->
+          <circle cx="30" cy="40" r="12" fill="#B8860B" opacity="0.6"/>
+          <circle cx="170" cy="40" r="12" fill="#B8860B" opacity="0.6"/>
+          <!-- Plants decoration -->
+          <ellipse cx="20" cy="180" rx="15" ry="30" fill="#2D5A1B"/>
+          <ellipse cx="180" cy="175" rx="15" ry="28" fill="#2D5A1B"/>
+          <text x="100" y="175" text-anchor="middle" font-size="9" fill="#D4A017" font-family="DM Sans">Studio Setup</text>
+        </svg>
+      </div>
+      <!-- Collage image 3: Islamic art pattern -->
+      <div class="collage-item">
+        <svg class="collage-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="200" fill="#1A3A2A"/>
+          <!-- Geometric Islamic pattern -->
+          <g stroke="#B8860B" stroke-width="0.8" fill="none" opacity="0.7">
+            <polygon points="100,20 160,60 160,140 100,180 40,140 40,60" />
+            <polygon points="100,40 148,68 148,132 100,160 52,132 52,68" />
+            <polygon points="100,60 136,82 136,118 100,140 64,118 64,82" />
+          </g>
+          <g fill="#D4A017" opacity="0.8">
+            <polygon points="100,10 106,26 122,26 110,36 114,52 100,42 86,52 90,36 78,26 94,26"/>
+            <polygon points="100,148 104,160 116,160 107,167 111,180 100,172 89,180 93,167 84,160 96,160"/>
+          </g>
+          <text x="100" y="108" text-anchor="middle" font-family="Amiri,serif" font-size="14" fill="#D4A017">بِسْمِ اللَّٰهِ</text>
+          <text x="100" y="128" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="7" fill="#9BBB9B">Bismillah</text>
+        </svg>
+      </div>
+    </div>
+    <div class="about-quote">
+      "My content is my dawah — a way to show the world the beauty of our culture, our faith, and our stories."
+    </div>
+  </div>
+  <div class="about-text">
+    <div class="section-tag">About Fatuma</div>
+    <h2 class="section-title">A voice for <em>authentic</em> African stories</h2>
+    <div class="geometric-divider"><div class="geo-line"></div><div class="geo-diamond"></div><div class="geo-line"></div></div>
+    <p>
+      Assalamu Alaikum! I'm Fatuma Hassan, a Somali-Kenyan content creator based in the heart of Nairobi. Born and raised between the vibrant streets of Eastleigh and the modern pulse of Westlands, my content bridges worlds — traditional and contemporary, East African and global.
+    </p>
+    <p>
+      For over 5 years I've been creating content that celebrates Muslim lifestyle, Somali culture, East African beauty, food, travel, and fashion — always with authenticity, always with purpose. My hijab is not just a covering; it's a statement of identity that shapes every visual story I tell.
+    </p>
+    <p>
+      I collaborate with local and international brands who want to genuinely connect with Muslim and African audiences. My community trusts me — and that trust is the most valuable asset I bring to every partnership.
+    </p>
+    <div class="about-values">
+      <span class="value-tag">🌙 Faith-Forward</span>
+      <span class="value-tag">🌍 East African</span>
+      <span class="value-tag">📸 Visual Storytelling</span>
+      <span class="value-tag">✨ Lifestyle</span>
+      <span class="value-tag">🫶 Community</span>
+      <span class="value-tag">🎬 Video Content</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="fade-in">
+  <div class="section-tag">What I Offer</div>
+  <h2 class="section-title" style="color:var(--sand)">Services & <em style="color:var(--gold-light)">Packages</em></h2>
+  <p class="services-intro">From brand storytelling to social media strategy, I create content that resonates, converts, and represents your brand authentically in the East African market.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">📸</div>
+      <h3 class="service-name">Brand Photography</h3>
+      <p class="service-desc">High-quality lifestyle and product photography tailored for social media, e-commerce, and editorial use. Nairobi locations or studio.</p>
+      <div class="service-price">From KES 25,000 / session</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎬</div>
+      <h3 class="service-name">Video Content & Reels</h3>
+      <p class="service-desc">Short-form video content for Instagram, TikTok & YouTube — scripted, filmed, and edited to platform-native standards that actually get views.</p>
+      <div class="service-price">From KES 35,000 / video</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📱</div>
+      <h3 class="service-name">Social Media Management</h3>
+      <p class="service-desc">Full monthly management of your brand's Instagram or TikTok — content calendar, captions, posting, and engagement. Growth guaranteed.</p>
+      <div class="service-price">From KES 45,000 / month</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🤝</div>
+      <h3 class="service-name">Influencer Partnerships</h3>
+      <p class="service-desc">Sponsored posts, product reviews, unboxings, and campaign collaborations delivered to my engaged audience of 85K+ followers across platforms.</p>
+      <div class="service-price">From KES 20,000 / post</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">✍️</div>
+      <h3 class="service-name">Content Strategy</h3>
+      <p class="service-desc">Brand voice development, content audits, competitor analysis, and a full 3-month content roadmap built for your business goals and audience.</p>
+      <div class="service-price">From KES 60,000 / project</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎓</div>
+      <h3 class="service-name">Creator Mentorship</h3>
+      <p class="service-desc">1-on-1 coaching for aspiring Kenyan and Somali content creators. Camera confidence, niche discovery, monetization, and halal brand deals.</p>
+      <div class="service-price">From KES 15,000 / month</div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="fade-in">
+  <div class="portfolio-header">
+    <div>
+      <div class="section-tag">My Work</div>
+      <h2 class="section-title">Selected <em>Portfolio</em></h2>
+    </div>
+    <div class="portfolio-filters">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Fashion</button>
+      <button class="filter-btn">Food</button>
+      <button class="filter-btn">Travel</button>
+    </div>
+  </div>
+  <div class="portfolio-grid">
+    <!-- Item 1: wide - fashion campaign -->
+    <div class="portfolio-item wide">
+      <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+        <rect width="700" height="400" fill="#2C1810"/>
+        <!-- Fabric pattern -->
+        <rect width="700" height="400" fill="url(#fabricPat)" opacity="0.3"/>
+        <defs><pattern id="fabricPat" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+          <path d="M15 0 L30 15 L15 30 L0 15 Z" fill="#C4622D" stroke="#B8860B" stroke-width="0.5"/>
+        </pattern></defs>
+        <!-- Fashion silhouettes -->
+        <ellipse cx="200" cy="100" rx="45" ry="50" fill="#5C3218"/>
+        <ellipse cx="200" cy="100" rx="35" ry="40" fill="url(#hijabGrad2)"/>
+        <defs><linearGradient id="hijabGrad2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#163020"/><stop offset="100%" stop-color="#0A1A10"/></linearGradient></defs>
+        <rect x="175" y="145" width="50" height="180" rx="5" fill="#C4622D"/>
+        <ellipse cx="350" cy="100" rx="45" ry="50" fill="#5C3218"/>
+        <ellipse cx="350" cy="100" rx="35" ry="40" fill="#163020"/>
+        <rect x="322" y="145" width="56" height="175" rx="5" fill="#8B3A1A"/>
+        <ellipse cx="500" cy="100" rx="45" ry="50" fill="#5C3218"/>
+        <ellipse cx="500" cy="100" rx="35" ry="40" fill="#1A2C10"/>
+        <rect x="475" y="145" width="50" height="170" rx="5" fill="#B8860B"/>
+        <!-- Gold accents -->
+        <line x1="0" y1="380" x2="700" y2="380" stroke="#B8860B" stroke-width="2"/>
+        <text x="350" y="370" text-anchor="middle" font-family="Amiri,serif" font-size="13" fill="#B8860B">MODEST FASHION · NAIROBI 2024</text>
+      </svg>
+      <div class="portfolio-overlay"><h3>Modest Fashion Campaign</h3><p>Fashion · Brand Photography</p></div>
+    </div>
+    <!-- Item 2: Somali food -->
+    <div class="portfolio-item">
+      <svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg">
+        <rect width="300" height="380" fill="#3D1F0D"/>
+        <!-- Table surface -->
+        <ellipse cx="150" cy="280" rx="130" ry="40" fill="#5C3218"/>
+        <!-- Basmati rice plate -->
+        <ellipse cx="150" cy="240" rx="100" ry="30" fill="#F5F0E0"/>
+        <ellipse cx="150" cy="235" rx="95" ry="25" fill="#E8DDB8"/>
+        <!-- Rice texture -->
+        <g fill="#D4C8A0" opacity="0.7">
+          <rect x="110" y="225" width="8" height="3" rx="1"/>
+          <rect x="125" y="220" width="8" height="3" rx="1"/>
+          <rect x="140" y="228" width="8" height="3" rx="1"/>
+          <rect x="160" y="222" width="8" height="3" rx="1"/>
+          <rect x="175" y="226" width="8" height="3" rx="1"/>
+        </g>
+        <!-- Suqaar (meat) -->
+        <ellipse cx="150" cy="225" rx="45" ry="20" fill="#8B3A1A"/>
+        <g fill="#6B2A10">
+          <rect x="120" y="215" width="12" height="8" rx="2"/>
+          <rect x="138" y="212" width="10" height="10" rx="2"/>
+          <rect x="155" y="216" width="12" height="8" rx="2"/>
+          <rect x="170" y="214" width="10" height="9" rx="2"/>
+        </g>
+        <!-- Herbs garnish -->
+        <g fill="#3A7A24">
+          <ellipse cx="115" cy="218" rx="8" ry="4"/>
+          <ellipse cx="185" cy="218" rx="8" ry="4"/>
+        </g>
+        <!-- Candle -->
+        <rect x="240" y="190" width="16" height="60" rx="3" fill="#F5EDD9"/>
+        <ellipse cx="248" cy="188" rx="8" ry="4" fill="#F0E0C0"/>
+        <path d="M248 185 Q252 170 248 160 Q244 170 248 185" fill="#D4A017"/>
+        <!-- Chai cup -->
+        <rect x="60" y="210" width="40" height="50" rx="5" fill="#8B3A1A"/>
+        <rect x="63" y="213" width="34" height="44" rx="4" fill="#1A0A02"/>
+        <ellipse cx="80" cy="213" rx="17" ry="5" fill="#C4622D"/>
+        <text x="150" y="340" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#D4A017">Somali Cuisine</text>
+      </svg>
+      <div class="portfolio-overlay"><h3>Suqaar & Basmati Night</h3><p>Food Photography · Lifestyle</p></div>
+    </div>
+    <!-- Item 3: Nairobi travel -->
+    <div class="portfolio-item">
+      <svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="skyGrad2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#FF6B35"/><stop offset="50%" stop-color="#E8A44A"/><stop offset="100%" stop-color="#C4622D"/></linearGradient></defs>
+        <rect width="300" height="380" fill="url(#skyGrad2)"/>
+        <!-- Nairobi sunset cityscape -->
+        <rect x="0" y="200" width="300" height="180" fill="#1A0A02"/>
+        <!-- Buildings silhouette -->
+        <rect x="0" y="160" width="40" height="220" fill="#1A0A02"/>
+        <rect x="30" y="180" width="30" height="200" fill="#2C1810"/>
+        <rect x="50" y="140" width="50" height="240" fill="#1A0A02"/>
+        <!-- KICC -->
+        <rect x="110" y="100" width="40" height="280" fill="#2C1810"/>
+        <ellipse cx="130" cy="100" rx="20" ry="8" fill="#1A0A02"/>
+        <rect x="124" y="60" width="12" height="45" fill="#3D1F0D"/>
+        <rect x="160" y="150" width="45" height="230" fill="#1A0A02"/>
+        <rect x="195" y="120" width="35" height="260" fill="#2C1810"/>
+        <rect x="225" y="160" width="75" height="220" fill="#1A0A02"/>
+        <!-- Gold windows -->
+        <g fill="#D4A017" opacity="0.7">
+          <rect x="56" y="160" width="6" height="5"/>
+          <rect x="68" y="160" width="6" height="5"/>
+          <rect x="80" y="165" width="6" height="5"/>
+          <rect x="115" y="120" width="6" height="5"/>
+          <rect x="130" y="130" width="6" height="5"/>
+          <rect x="165" y="170" width="6" height="5"/>
+        </g>
+        <!-- Acacia tree silhouette -->
+        <rect x="248" y="275" width="6" height="80" fill="#1A0A02"/>
+        <ellipse cx="251" cy="265" rx="30" ry="18" fill="#1A0A02"/>
+        <text x="150" y="370" text-anchor="middle" font-family="Amiri,serif" font-size="12" fill="#D4A017">Nairobi Sunset</text>
+      </svg>
+      <div class="portfolio-overlay"><h3>Nairobi Golden Hour</h3><p>Travel · City Photography</p></div>
+    </div>
+    <!-- Item 4: Henna/beauty -->
+    <div class="portfolio-item">
+      <svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg">
+        <rect width="300" height="380" fill="#F5EDD9"/>
+        <!-- Hand with henna -->
+        <ellipse cx="150" cy="250" rx="70" ry="90" fill="#8B5E3C"/>
+        <rect x="100" y="160" width="100" height="130" rx="20" fill="#8B5E3C"/>
+        <!-- Fingers -->
+        <rect x="100" y="110" width="20" height="70" rx="10" fill="#8B5E3C"/>
+        <rect x="125" y="90" width="20" height="85" rx="10" fill="#8B5E3C"/>
+        <rect x="150" y="95" width="20" height="80" rx="10" fill="#8B5E3C"/>
+        <rect x="175" y="110" width="20" height="70" rx="10" fill="#8B5E3C"/>
+        <!-- Henna patterns -->
+        <g stroke="#3D1F0D" stroke-width="1.5" fill="none">
+          <circle cx="150" cy="220" r="30"/>
+          <circle cx="150" cy="220" r="20"/>
+          <circle cx="150" cy="220" r="10"/>
+          <path d="M110 190 Q130 200 150 190 Q170 200 190 190"/>
+          <path d="M110 240 Q130 230 150 240 Q170 230 190 240"/>
+          <!-- Flower patterns -->
+          <path d="M150 155 Q155 145 150 140 Q145 145 150 155"/>
+          <path d="M150 155 Q160 152 162 145 Q155 143 150 155"/>
+          <path d="M150 155 Q160 160 165 155 Q160 150 150 155"/>
+          <path d="M150 155 Q160 165 155 172 Q148 165 150 155"/>
+          <path d="M150 155 Q142 165 138 172 Q145 163 150 155"/>
+          <path d="M150 155 Q140 160 135 155 Q140 150 150 155"/>
+          <path d="M150 155 Q140 152 138 145 Q145 143 150 155"/>
+          <path d="M150 155 Q144 145 150 140 Q155 148 150 155"/>
+        </g>
+        <g fill="#3D1F0D" opacity="0.6">
+          <circle cx="150" cy="220" r="5"/>
+          <circle cx="130" cy="208" r="3"/>
+          <circle cx="170" cy="208" r="3"/>
+          <circle cx="130" cy="232" r="3"/>
+          <circle cx="170" cy="232" r="3"/>
+        </g>
+        <text x="150" y="360" text-anchor="middle" font-family="Amiri,serif" font-size="12" fill="#8B3A1A">Henna & Beauty</text>
+      </svg>
+      <div class="portfolio-overlay"><h3>Eid Henna Session</h3><p>Beauty · Lifestyle</p></div>
+    </div>
+    <!-- Item 5: Brand collab -->
+    <div class="portfolio-item">
+      <svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg">
+        <rect width="300" height="380" fill="#163020"/>
+        <!-- Skincare products -->
+        <rect x="80" y="140" width="60" height="120" rx="8" fill="#F5EDD9"/>
+        <rect x="84" y="144" width="52" height="112" rx="6" fill="#EDD9B8"/>
+        <text x="110" y="200" text-anchor="middle" font-size="7" fill="#8B3A1A" font-family="DM Sans">PURE</text>
+        <text x="110" y="212" text-anchor="middle" font-size="6" fill="#8B3A1A" font-family="DM Sans">NAIROBI</text>
+        <!-- Round jar -->
+        <ellipse cx="195" cy="220" rx="45" ry="15" fill="#D4A017"/>
+        <rect x="150" y="205" width="90" height="25" rx="4" fill="#C49017"/>
+        <ellipse cx="195" cy="205" rx="45" ry="13" fill="#F0C030"/>
+        <text x="195" y="208" text-anchor="middle" font-size="8" fill="#2C1810" font-family="DM Sans">GLOW</text>
+        <!-- Bottle 2 -->
+        <rect x="170" y="120" width="45" height="100" rx="20" fill="#B8860B"/>
+        <rect x="180" y="95" width="25" height="30" rx="5" fill="#D4A017"/>
+        <!-- Plants -->
+        <ellipse cx="55" cy="160" rx="20" ry="35" fill="#2D5A1B"/>
+        <ellipse cx="250" cy="170" rx="18" ry="30" fill="#3A7A24"/>
+        <text x="150" y="360" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#D4A017">Brand Partnership</text>
+      </svg>
+      <div class="portfolio-overlay"><h3>Skincare Brand Campaign</h3><p>Brand Collab · Product</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="fade-in">
+  <div class="section-tag">Client Reviews</div>
+  <h2 class="section-title">What brands <em>say</em></h2>
+  <div class="geometric-divider"><div class="geo-line"></div><div class="geo-diamond"></div><div class="geo-line"></div></div>
+  <div class="testimonials-grid">
+
+    <!-- T1 -->
+    <div class="testimonial-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-quote">Fatuma delivered beyond our expectations. The content she created for our Eid campaign reached over 200,000 people organically. Her understanding of the Muslim consumer is unmatched in Nairobi.</p>
+      <div class="t-author">
+        <div class="t-avatar">
+          <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+            <rect width="44" height="44" rx="22" fill="#EDD9B8"/>
+            <ellipse cx="22" cy="18" rx="9" ry="10" fill="#5C3218"/>
+            <ellipse cx="22" cy="18" rx="7" ry="8" fill="#1A3A2A"/>
+            <ellipse cx="22" cy="38" rx="14" ry="12" fill="#C4622D"/>
+            <text x="22" y="21" text-anchor="middle" font-size="8" fill="#D4A017" font-family="DM Sans">AM</text>
+          </svg>
+        </div>
+        <div>
+          <div class="t-name">Amina Musa</div>
+          <div class="t-role">Marketing Director</div>
+          <div class="t-brand">Zawadi Fashion, Nairobi</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- T2 -->
+    <div class="testimonial-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-quote">Working with Fatuma was a game changer. Her content is authentic, visually stunning, and her followers genuinely trust her. Our product sold out within 48 hours of her post. She is the real deal.</p>
+      <div class="t-author">
+        <div class="t-avatar">
+          <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+            <rect width="44" height="44" rx="22" fill="#F5EDD9"/>
+            <ellipse cx="22" cy="18" rx="9" ry="10" fill="#7A5C3A"/>
+            <ellipse cx="22" cy="38" rx="14" ry="12" fill="#2C1810"/>
+            <text x="22" y="22" text-anchor="middle" font-size="9" fill="#D4A017" font-family="DM Sans">YM</text>
+          </svg>
+        </div>
+        <div>
+          <div class="t-name">Yusuf Mohamed</div>
+          <div class="t-role">Founder & CEO</div>
+          <div class="t-brand">Eastleigh Organics</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- T3 -->
+    <div class="testimonial-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-quote">Fatuma's photography is art. She captured the essence of our restaurant in a way we never imagined possible. Bookings doubled in the month after her content went live. We are forever grateful.</p>
+      <div class="t-author">
+        <div class="t-avatar">
+          <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+            <rect width="44" height="44" rx="22" fill="#EDD9B8"/>
+            <ellipse cx="22" cy="18" rx="9" ry="10" fill="#4A2C10"/>
+            <ellipse cx="22" cy="38" rx="14" ry="12" fill="#8B3A1A"/>
+            <text x="22" y="22" text-anchor="middle" font-size="9" fill="#F5EDD9" font-family="DM Sans">ZA</text>
+          </svg>
+        </div>
+        <div>
+          <div class="t-name">Zara Ahmed</div>
+          <div class="t-role">Owner</div>
+          <div class="t-brand">Somali Kitchen, Westlands</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- T4 -->
+    <div class="testimonial-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-quote">I hired Fatuma for my mentorship program and she transformed my content strategy completely. Her knowledge of the Kenyan creator economy and halal brand deals is exceptional. Highly recommend.</p>
+      <div class="t-author">
+        <div class="t-avatar">
+          <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+            <rect width="44" height="44" rx="22" fill="#F5EDD9"/>
+            <ellipse cx="22" cy="18" rx="9" ry="10" fill="#6B4A2A"/>
+            <ellipse cx="22" cy="38" rx="14" ry="12" fill="#163020"/>
+            <text x="22" y="22" text-anchor="middle" font-size="9" fill="#D4A017" font-family="DM Sans">NA</text>
+          </svg>
+        </div>
+        <div>
+          <div class="t-name">Nasra Ali</div>
+          <div class="t-role">Aspiring Creator</div>
+          <div class="t-brand">Nairobi, Kenya</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- T5 -->
+    <div class="testimonial-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-quote">Fatuma is more than a content creator — she is a brand strategist. Her social media management package transformed our online presence in just 60 days. Our Instagram engagement tripled.</p>
+      <div class="t-author">
+        <div class="t-avatar">
+          <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+            <rect width="44" height="44" rx="22" fill="#EDD9B8"/>
+            <ellipse cx="22" cy="18" rx="9" ry="10" fill="#5C3218"/>
+            <ellipse cx="22" cy="38" rx="14" ry="12" fill="#B8860B"/>
+            <text x="22" y="22" text-anchor="middle" font-size="9" fill="#1A0A02" font-family="DM Sans">HN</text>
+          </svg>
+        </div>
+        <div>
+          <div class="t-name">Hassan Nur</div>
+          <div class="t-role">Brand Manager</div>
+          <div class="t-brand">NairobiHijab Co.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- T6 -->
+    <div class="testimonial-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-quote">We flew Fatuma to Dubai for our campaign and it was worth every shilling. Her professionalism, vision, and creative eye make her one of the top creators coming out of East Africa right now.</p>
+      <div class="t-author">
+        <div class="t-avatar">
+          <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+            <rect width="44" height="44" rx="22" fill="#F5EDD9"/>
+            <ellipse cx="22" cy="18" rx="9" ry="10" fill="#8B5E3C"/>
+            <ellipse cx="22" cy="38" rx="14" ry="12" fill="#C4622D"/>
+            <text x="22" y="22" text-anchor="middle" font-size="9" fill="white" font-family="DM Sans">LA</text>
+          </svg>
+        </div>
+        <div>
+          <div class="t-name">Layla Al-Rashid</div>
+          <div class="t-role">Creative Director</div>
+          <div class="t-brand">Hijab House, UAE</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MORE / BLOG -->
+<section id="more" class="fade-in">
+  <div class="section-tag">Blog & Insights</div>
+  <h2 class="section-title">From the <em>journal</em></h2>
+  <div class="more-grid">
+
+    <div class="more-card">
+      <div class="more-img">
+        <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="225" fill="#1A3A2A"/>
+          <!-- Blog 1: Ramadan content tips -->
+          <rect width="400" height="225" fill="#163020"/>
+          <!-- Crescent moon -->
+          <circle cx="250" cy="80" r="50" fill="#D4A017" opacity="0.9"/>
+          <circle cx="268" cy="65" r="42" fill="#163020"/>
+          <!-- Stars -->
+          <g fill="#D4A017">
+            <polygon points="150,40 152,48 160,48 154,53 156,62 150,56 144,62 146,53 140,48 148,48"/>
+            <circle cx="320" cy="120" r="3"/>
+            <circle cx="80" cy="90" r="2"/>
+            <circle cx="350" cy="50" r="2"/>
+          </g>
+          <!-- Lanterns -->
+          <rect x="50" y="100" width="30" height="50" rx="4" fill="#B8860B"/>
+          <rect x="52" y="102" width="26" height="46" rx="3" fill="#D4A017" opacity="0.7"/>
+          <rect x="50" y="96" width="30" height="8" rx="2" fill="#8B6010"/>
+          <path d="M65 96 L65 80" stroke="#8B6010" stroke-width="2"/>
+          <rect x="320" y="110" width="28" height="45" rx="4" fill="#B8860B"/>
+          <rect x="322" y="112" width="24" height="41" rx="3" fill="#D4A017" opacity="0.7"/>
+          <text x="200" y="185" text-anchor="middle" font-family="Amiri,serif" font-size="13" fill="#D4A017">رمضان كريم</text>
+          <text x="200" y="210" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9BBB9B">RAMADAN CONTENT GUIDE</text>
+        </svg>
+      </div>
+      <div class="more-body">
+        <div class="more-cat">Content Strategy</div>
+        <h3 class="more-title">How I Plan My Entire Ramadan Content Calendar in One Week</h3>
+        <p class="more-excerpt">From suhoor reels to Eid campaigns — my complete Ramadan content playbook that generated 2M+ views last year.</p>
+        <div class="more-meta">
+          <span class="more-date">March 15, 2025</span>
+          <a href="#" class="more-read">Read more →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="more-card">
+      <div class="more-img">
+        <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="225" fill="#2C1810"/>
+          <!-- Blog 2: Brand deals halal -->
+          <!-- Phone mockup -->
+          <rect x="140" y="20" width="120" height="190" rx="12" fill="#1A0A02"/>
+          <rect x="145" y="28" width="110" height="172" rx="8" fill="#3D2515"/>
+          <!-- Instagram feed preview -->
+          <rect x="150" y="35" width="100" height="80" rx="4" fill="#C4622D"/>
+          <rect x="150" y="120" width="45" height="75" rx="4" fill="#B8860B"/>
+          <rect x="200" y="120" width="50" height="75" rx="4" fill="#8B3A1A"/>
+          <!-- Like, comment icons -->
+          <text x="158" y="210" font-size="8" fill="#D4A017" font-family="DM Sans">♥ 12.4K  💬 340</text>
+          <!-- Money/brand deal symbols -->
+          <circle cx="80" cy="80" r="35" fill="none" stroke="#D4A017" stroke-width="2" opacity="0.6"/>
+          <text x="80" y="85" text-anchor="middle" font-size="20" fill="#D4A017" font-family="DM Sans">KES</text>
+          <circle cx="320" cy="80" r="35" fill="none" stroke="#B8860B" stroke-width="2" opacity="0.6"/>
+          <text x="320" y="85" text-anchor="middle" font-size="12" fill="#B8860B" font-family="DM Sans">HALAL</text>
+          <text x="320" y="98" text-anchor="middle" font-size="12" fill="#B8860B" font-family="DM Sans">DEAL</text>
+        </svg>
+      </div>
+      <div class="more-body">
+        <div class="more-cat">Business</div>
+        <h3 class="more-title">Landing Halal Brand Deals as a Muslim Creator in Kenya</h3>
+        <p class="more-excerpt">My exact email templates, rate cards, and red flags to watch for when negotiating brand partnerships as a faith-conscious creator.</p>
+        <div class="more-meta">
+          <span class="more-date">Jan 28, 2025</span>
+          <a href="#" class="more-read">Read more →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="more-card">
+      <div class="more-img">
+        <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="mbGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#87CEEB"/>
+            <stop offset="60%" stop-color="#E8C4A0"/>
+            <stop offset="100%" stop-color="#C4A07A"/>
+          </linearGradient></defs>
+          <rect width="400" height="225" fill="url(#mbGrad)"/>
+          <!-- Blog 3: Eastleigh guide -->
+          <!-- Street buildings East Africa style -->
+          <rect x="0" y="120" width="400" height="105" fill="#3D2515"/>
+          <rect x="20" y="80" width="60" height="145" fill="#5C3A1E"/>
+          <rect x="90" y="60" width="80" height="165" fill="#3D2515"/>
+          <rect x="180" y="90" width="60" height="135" fill="#5C3A1E"/>
+          <rect x="250" y="70" width="70" height="155" fill="#2C1810"/>
+          <rect x="330" y="100" width="70" height="125" fill="#3D2515"/>
+          <!-- Signs (Eastleigh vibes) -->
+          <rect x="100" y="80" width="60" height="18" rx="2" fill="#C4622D"/>
+          <text x="130" y="92" text-anchor="middle" font-size="7" fill="white" font-family="DM Sans">EASTLEIGH</text>
+          <rect x="260" y="90" width="50" height="16" rx="2" fill="#B8860B"/>
+          <text x="285" y="101" text-anchor="middle" font-size="7" fill="#1A0A02" font-family="DM Sans">MARKET</text>
+          <!-- People silhouettes -->
+          <ellipse cx="160" cy="185" rx="10" ry="15" fill="#1A0A02"/>
+          <ellipse cx="220" cy="180" rx="10" ry="15" fill="#1A0A02"/>
+          <!-- Matatu -->
+          <rect x="280" y="170" width="80" height="35" rx="4" fill="#C4622D"/>
+          <rect x="285" y="175" width="25" height="20" rx="2" fill="#87CEEB"/>
+          <circle cx="295" cy="205" r="7" fill="#1A0A02"/>
+          <circle cx="345" cy="205" r="7" fill="#1A0A02"/>
+        </svg>
+      </div>
+      <div class="more-body">
+        <div class="more-cat">Lifestyle · Travel</div>
+        <h3 class="more-title">The Ultimate Muslim Creator's Guide to Eastleigh, Nairobi</h3>
+        <p class="more-excerpt">The best spots for content creation, shopping, food, and community in Nairobi's vibrant Little Mogadishu neighborhood.</p>
+        <div class="more-meta">
+          <span class="more-date">Dec 12, 2024</span>
+          <a href="#" class="more-read">Read more →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LOCATION / MAP -->
+<section id="location" class="fade-in">
+  <div class="section-tag">Find Me</div>
+  <h2 class="section-title">Based in <em style="color:var(--gold-light)">Nairobi</em></h2>
+  <p class="section-intro">Available for shoots and collaborations across Nairobi and remote projects worldwide. Always open to travel for the right campaign.</p>
+  <div class="location-wrap">
+    <div class="map-container">
+      <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=36.7,−1.4,36.95,−1.2&layer=mapnik&marker=-1.2921,36.8219"
+        allowfullscreen
+        loading="lazy"
+        title="Nairobi, Kenya Map">
+      </iframe>
+    </div>
+    <div class="location-info">
+      <div class="loc-item">
+        <div class="loc-icon">📍</div>
+        <div>
+          <div class="loc-label">Base Location</div>
+          <div class="loc-val">Nairobi, Kenya</div>
+        </div>
+      </div>
+      <div class="loc-item">
+        <div class="loc-icon">🌍</div>
+        <div>
+          <div class="loc-label">Neighbourhoods I Shoot In</div>
+          <div class="loc-val">Westlands · Eastleigh · Karen · CBD · Kilimani</div>
+        </div>
+      </div>
+      <div class="loc-item">
+        <div class="loc-icon">✈️</div>
+        <div>
+          <div class="loc-label">Available For Travel</div>
+          <div class="loc-val">East Africa, UAE, UK & Beyond</div>
+        </div>
+      </div>
+      <div class="loc-item">
+        <div class="loc-icon">🕐</div>
+        <div>
+          <div class="loc-label">Timezone</div>
+          <div class="loc-val">EAT — East Africa Time (UTC+3)</div>
+        </div>
+      </div>
+      <div class="loc-item">
+        <div class="loc-icon">📅</div>
+        <div>
+          <div class="loc-label">Response Time</div>
+          <div class="loc-val">Within 24 hours (Mon–Fri)</div>
+        </div>
+      </div>
+      <div class="availability-badge">
+        <div class="dot"></div>
+        Currently accepting new clients — June 2025
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="fade-in">
+  <div class="contact-wrap">
+    <div>
+      <div class="section-tag">Get In Touch</div>
+      <h2 class="section-title">Let's create something <em>beautiful</em></h2>
+      <div class="geometric-divider"><div class="geo-line"></div><div class="geo-diamond"></div><div class="geo-line"></div></div>
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input type="text" class="form-input" placeholder="Amina Hassan">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" placeholder="hello@brand.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Company / Brand</label>
+          <input type="text" class="form-input" placeholder="Your Brand Name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Service Interested In</label>
+          <select class="form-select">
+            <option>Brand Photography</option>
+            <option>Video Content & Reels</option>
+            <option>Social Media Management</option>
+            <option>Influencer Partnership</option>
+            <option>Content Strategy</option>
+            <option>Creator Mentorship</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tell Me About Your Project</label>
+          <textarea class="form-textarea" placeholder="Describe your brand, goals, and what you're looking to achieve..."></textarea>
+        </div>
+        <button class="form-submit">Send Message ✦</button>
+      </div>
+    </div>
+    <div class="contact-info">
+      <h3>Other ways to reach me</h3>
+      <p>Prefer to connect directly? Reach out on social media or email. I typically respond within 24 hours, in sha Allah.</p>
+      <div class="social-links">
+        <a href="#" class="social-link">
+          <span class="social-icon">📸</span>
+          <span class="social-name">Instagram</span>
+          <span class="social-handle">@fatuma.creates</span>
+        </a>
+        <a href="#" class="social-link">
+          <span class="social-icon">🎵</span>
+          <span class="social-name">TikTok</span>
+          <span class="social-handle">@fatumahassan</span>
+        </a>
+        <a href="#" class="social-link">
+          <span class="social-icon">▶️</span>
+          <span class="social-name">YouTube</span>
+          <span class="social-handle">Fatuma Hassan</span>
+        </a>
+        <a href="#" class="social-link">
+          <span class="social-icon">📧</span>
+          <span class="social-name">Email</span>
+          <span class="social-handle">hello@fatumahassan.co.ke</span>
+        </a>
+        <a href="#" class="social-link">
+          <span class="social-icon">💬</span>
+          <span class="social-name">WhatsApp Business</span>
+          <span class="social-handle">+254 700 123 456</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Fatuma<span>.</span></div>
+  <div class="footer-copy">© 2025 Fatuma Hassan · Nairobi, Kenya · All rights reserved</div>
+  <div class="footer-arabic">بِسْمِ اللَّٰهِ</div>
+</footer>
+
+<script>
+  // Filter buttons
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+<!-- Contact Form Handler -->
+<script>
+  const submitBtn = document.querySelector('.form-submit');
+  submitBtn.addEventListener('click', () => {
+    const inputs = document.querySelectorAll('.form-input, .form-select, .form-textarea');
+    const [name, email, , , message] = [...inputs].map(i => i.value.trim());
+
+    if (!name || !email || !message) {
+      submitBtn.textContent = '\u26a0 Please fill in name, email & message';
+      submitBtn.style.background = '#8B3A1A';
+      setTimeout(() => { submitBtn.textContent = 'Send Message \u2736'; submitBtn.style.background = ''; }, 3000);
+      return;
+    }
+
+    submitBtn.textContent = '\u2713 Message Sent \u2014 Shukran!';
+    submitBtn.style.background = '#2D5A1B';
+    inputs.forEach(i => i.value = '');
+    setTimeout(() => { submitBtn.textContent = 'Send Message \u2736'; submitBtn.style.background = ''; }, 4000);
+  });
+</script>
+</body>
+</html>
